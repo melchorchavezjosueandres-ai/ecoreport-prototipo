@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Panel de atención · EcoReport</title>
+  <meta name="description" content="Gestión de reportes asignados al personal de atención ambiental.">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&amp;family=Source+Sans+3:wght@400;600;700&amp;display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html">
+        <img src="img/logo-icono.svg" alt="" width="38" height="38">
+        <span class="brand__texto">Eco<b>Report</b></span>
+      </a>
+      <input type="checkbox" id="nav-check" class="nav-check" aria-label="Mostrar u ocultar el menú">
+      <label class="nav-toggle" for="nav-check">
+        <span class="sr-only">Menú</span>
+        <span class="nav-toggle__barras" aria-hidden="true"></span>
+      </label>
+      <nav class="nav" id="menu-principal" aria-label="Principal">
+        <ul class="nav__lista">
+          <li><a class="nav__link" href="atencion.html" aria-current="page">Panel de atención</a></li>
+          <li><a class="nav__link" href="perfil.html">Mi perfil</a></li>
+          <li class="nav__usuario"><span>Laura · Personal de atención</span> <a class="btn btn--ghost btn--sm" href="index.html">Cerrar sesión</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido" class="container pagina">
+    <nav class="migas" aria-label="Migas de pan"><ol><li><a href="index.html">Inicio</a></li><li aria-current="page">Panel de atención</li></ol></nav>
+    <header class="pagina__cabecera">
+      <h1>Panel de atención ambiental</h1>
+      <p>Gestiona los reportes asignados, registra tus acciones y actualiza su avance.</p>
+    </header>
+    <div id="actualizado" class="alert alert--exito alert--target bloque-resultado" role="status"><p>Acción registrada. Simulación del prototipo: sin backend, los cambios no se guardan.</p></div>
+
+    <section aria-label="Resumen de reportes asignados" class="grid grid--stats">
+      <div class="card stat">
+            <span class="stat__icono "><svg class="icono" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M9 14l2 2 4-4"/></svg></span>
+            <div><span class="stat__valor">7</span><span class="stat__etiqueta">Asignados a mí</span></div>
+          </div>
+      <div class="card stat">
+            <span class="stat__icono stat__icono--pendiente"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
+            <div><span class="stat__valor">0</span><span class="stat__etiqueta">Pendientes</span></div>
+          </div>
+      <div class="card stat">
+            <span class="stat__icono stat__icono--proceso"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></span>
+            <div><span class="stat__valor">4</span><span class="stat__etiqueta">En proceso</span></div>
+          </div>
+      <div class="card stat">
+            <span class="stat__icono stat__icono--atendido"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span>
+            <div><span class="stat__valor">3</span><span class="stat__etiqueta">Atendidos</span></div>
+          </div>
+    </section>
+
+    <section class="seccion" aria-labelledby="t-asignados">
+      <h2 id="t-asignados">Mis reportes asignados</h2>
+      <div class="lista-tarjetas">
+        <article class="card tarjeta-reporte"><div class="tarjeta-reporte__top"><h3>Olor fuerte por drenaje</h3><span class="badge badge--proceso">En proceso</span></div><p>ER-011 · Otro · Centro · 3 oct 2026</p><p>Callejón del Carmen</p><div class="acciones"><a class="btn btn--primary btn--sm" href="atencion.html#actualizado">Marcar como atendido</a><a class="btn btn--secondary btn--sm" href="atencion.html#accion">Registrar acción</a><a class="btn btn--ghost btn--sm" href="detalle.html#er-011">Ver detalle y evidencia</a></div></article><article class="card tarjeta-reporte"><div class="tarjeta-reporte__top"><h3>Riego de jardín bajo la lluvia</h3><span class="badge badge--atendido">Atendido</span></div><p>ER-007 · Desperdicio de agua · Delta · 1 oct 2026</p><p>Parque Delta, sección poniente</p><div class="acciones"><a class="btn btn--ghost btn--sm" href="detalle.html#er-007">Ver detalle y evidencia</a></div></article><article class="card tarjeta-reporte"><div class="tarjeta-reporte__top"><h3>Tubo roto en avenida</h3><span class="badge badge--proceso">En proceso</span></div><p>ER-006 · Fuga de agua potable · Obregón · 1 oct 2026</p><p>Blvd. Obregón y Calle 3</p><div class="acciones"><a class="btn btn--primary btn--sm" href="atencion.html#actualizado">Marcar como atendido</a><a class="btn btn--secondary btn--sm" href="atencion.html#accion">Registrar acción</a><a class="btn btn--ghost btn--sm" href="detalle.html#er-006">Ver detalle y evidencia</a></div></article><article class="card tarjeta-reporte"><div class="tarjeta-reporte__top"><h3>Escombro en lote baldío</h3><span class="badge badge--proceso">En proceso</span></div><p>ER-004 · Tiradero clandestino · Los Castillos · 28 sep 2026</p><p>Calle Roble, junto al arroyo</p><div class="acciones"><a class="btn btn--primary btn--sm" href="atencion.html#actualizado">Marcar como atendido</a><a class="btn btn--secondary btn--sm" href="atencion.html#accion">Registrar acción</a><a class="btn btn--ghost btn--sm" href="detalle.html#er-004">Ver detalle y evidencia</a></div></article><article class="card tarjeta-reporte"><div class="tarjeta-reporte__top"><h3>Basura junto al parque lineal</h3><span class="badge badge--proceso">En proceso</span></div><p>ER-002 · Acumulación de basura · Piletas · 25 sep 2026</p><p>Andador norte, frente a la cancha</p><div class="acciones"><a class="btn btn--primary btn--sm" href="atencion.html#actualizado">Marcar como atendido</a><a class="btn btn--secondary btn--sm" href="atencion.html#accion">Registrar acción</a><a class="btn btn--ghost btn--sm" href="detalle.html#er-002">Ver detalle y evidencia</a></div></article><article class="card tarjeta-reporte"><div class="tarjeta-reporte__top"><h3>Fuga constante en banqueta</h3><span class="badge badge--atendido">Atendido</span></div><p>ER-001 · Fuga de agua potable · San Juan de Dios · 22 sep 2026</p><p>Calle Hidalgo esquina con 5 de Mayo</p><div class="acciones"><a class="btn btn--ghost btn--sm" href="detalle.html#er-001">Ver detalle y evidencia</a></div></article><article class="card tarjeta-reporte"><div class="tarjeta-reporte__top"><h3>Llantas y muebles en el arroyo</h3><span class="badge badge--atendido">Atendido</span></div><p>ER-009 · Tiradero clandestino · Industrial · 18 sep 2026</p><p>Camino a la ladrillera</p><div class="acciones"><a class="btn btn--ghost btn--sm" href="detalle.html#er-009">Ver detalle y evidencia</a></div></article>
+      </div>
+    </section>
+
+    <section aria-labelledby="t-libres">
+      <h2 id="t-libres">Reportes sin asignar</h2>
+      <p class="texto-suave">Reportes nuevos que esperan a una persona responsable.</p>
+      <div class="lista-tarjetas">
+        <article class="card tarjeta-reporte"><div class="tarjeta-reporte__top"><h3>Basura en el camellón</h3><span class="badge badge--pendiente">Pendiente</span></div><p>ER-012 · Acumulación de basura · Jardines del Moral · 4 oct 2026</p><p>Camellón de Av. del Moral</p><div class="acciones"><a class="btn btn--primary btn--sm" href="atencion.html#actualizado">Tomar reporte</a><a class="btn btn--ghost btn--sm" href="detalle.html#er-012">Ver detalle y evidencia</a></div></article><article class="card tarjeta-reporte"><div class="tarjeta-reporte__top"><h3>Charco permanente en la calle</h3><span class="badge badge--pendiente">Pendiente</span></div><p>ER-010 · Fuga de agua potable · Piletas · 3 oct 2026</p><p>Calle Pípila 118</p><div class="acciones"><a class="btn btn--primary btn--sm" href="atencion.html#actualizado">Tomar reporte</a><a class="btn btn--ghost btn--sm" href="detalle.html#er-010">Ver detalle y evidencia</a></div></article><article class="card tarjeta-reporte"><div class="tarjeta-reporte__top"><h3>Bolsas en esquina sin recolección</h3><span class="badge badge--pendiente">Pendiente</span></div><p>ER-008 · Acumulación de basura · San Juan de Dios · 2 oct 2026</p><p>Calle Zaragoza y Allende</p><div class="acciones"><a class="btn btn--primary btn--sm" href="atencion.html#actualizado">Tomar reporte</a><a class="btn btn--ghost btn--sm" href="detalle.html#er-008">Ver detalle y evidencia</a></div></article><article class="card tarjeta-reporte"><div class="tarjeta-reporte__top"><h3>Contenedor desbordado en el mercado</h3><span class="badge badge--pendiente">Pendiente</span></div><p>ER-005 · Acumulación de basura · Centro · 30 sep 2026</p><p>Mercado Hidalgo, acceso sur</p><div class="acciones"><a class="btn btn--primary btn--sm" href="atencion.html#actualizado">Tomar reporte</a><a class="btn btn--ghost btn--sm" href="detalle.html#er-005">Ver detalle y evidencia</a></div></article><article class="card tarjeta-reporte"><div class="tarjeta-reporte__top"><h3>Manguera abierta en lavado de autos</h3><span class="badge badge--pendiente">Pendiente</span></div><p>ER-003 · Desperdicio de agua · Jardines del Moral · 27 sep 2026</p><p>Av. del Moral 214</p><div class="acciones"><a class="btn btn--primary btn--sm" href="atencion.html#actualizado">Tomar reporte</a><a class="btn btn--ghost btn--sm" href="detalle.html#er-003">Ver detalle y evidencia</a></div></article>
+      </div>
+    </section>
+
+    <div class="modal" id="accion" role="dialog" aria-modal="true" aria-labelledby="t-accion">
+      <a class="modal__fondo" href="#contenido" aria-label="Cerrar ventana"></a>
+      <div class="modal__caja">
+        <h2 id="t-accion">Registrar acción realizada</h2>
+        <form class="form" action="atencion.html#actualizado" method="get">
+          <div class="field">
+          <label class="field__label" for="a-reporte">Reporte</label>
+          <select id="a-reporte" name="a-reporte" required aria-describedby="a-reporte-error"><option value="">Selecciona el reporte</option><option>ER-011 · Olor fuerte por drenaje</option><option>ER-006 · Tubo roto en avenida</option><option>ER-004 · Escombro en lote baldío</option><option>ER-002 · Basura junto al parque lineal</option></select>
+          <p class="field__error" id="a-reporte-error">Selecciona una opción de la lista.</p>
+        </div>
+          <div class="field">
+          <label class="field__label" for="a-nota">Describe la acción</label>
+          <textarea id="a-nota" name="a-nota" rows="4" required minlength="5" maxlength="300" aria-describedby="a-nota-hint a-nota-error"></textarea>
+          <p class="field__hint" id="a-nota-hint">Ej. Se visitó el sitio y se instaló un contenedor temporal.</p>
+          <p class="field__error" id="a-nota-error">Describe la acción con al menos 5 caracteres.</p>
+        </div>
+          <div class="acciones">
+            <button class="btn btn--primary" type="submit">Guardar acción</button>
+            <a class="btn btn--ghost" href="#contenido">Cancelar</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__grid">
+      <div>
+        <p class="site-footer__marca">EcoReport</p>
+        <p>Sistema web para el reporte y seguimiento de problemas ambientales. Territorio más sano.</p>
+      </div>
+      <nav aria-label="Pie de página">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="login.html">Iniciar sesión</a></li>
+          <li><a href="registro.html">Crear cuenta</a></li>
+        </ul>
+      </nav>
+      <div>
+        <p>Universidad Tecnológica de León · Ingeniería en Tecnologías de la Información e Innovación Digital</p>
+        <p>Aplicaciones Web · Actividad 9 · Prototipo front-end (HTML5 + CSS3)</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

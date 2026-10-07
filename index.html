@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inicio · EcoReport</title>
+  <meta name="description" content="EcoReport: sistema web para reportar y dar seguimiento a problemas ambientales de tu comunidad.">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&amp;family=Source+Sans+3:wght@400;600;700&amp;display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html">
+        <img src="img/logo-icono.svg" alt="" width="38" height="38">
+        <span class="brand__texto">Eco<b>Report</b></span>
+      </a>
+      <input type="checkbox" id="nav-check" class="nav-check" aria-label="Mostrar u ocultar el menú">
+      <label class="nav-toggle" for="nav-check">
+        <span class="sr-only">Menú</span>
+        <span class="nav-toggle__barras" aria-hidden="true"></span>
+      </label>
+      <nav class="nav" id="menu-principal" aria-label="Principal">
+        <ul class="nav__lista">
+          <li><a class="nav__link" href="index.html" aria-current="page">Inicio</a></li>
+          <li><a class="nav__link" href="login.html">Iniciar sesión</a></li>
+          <li><a class="nav__link" href="registro.html">Crear cuenta</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <section class="hero" aria-labelledby="titulo-inicio">
+      <div class="container hero__grid">
+        <div>
+          <h1 id="titulo-inicio">Reporta el problema. Sigue su atención.</h1>
+          <p class="hero__lead">EcoReport reúne en un solo lugar los reportes de fugas de agua y basura acumulada de tu comunidad, con ubicación, evidencia y un estado que puedes consultar.</p>
+          <div class="hero__acciones">
+            <a class="btn btn--primary btn--lg" href="registro.html">Crear mi cuenta</a>
+            <a class="btn btn--secondary btn--lg" href="login.html">Iniciar sesión</a>
+          </div>
+          <p class="hero__nota">¿Solo quieres explorar el prototipo? En la pantalla de inicio de sesión puedes entrar como cada perfil.</p>
+        </div>
+        <div class="mapa" aria-hidden="true">
+          <span class="mapa__rio"></span>
+          <span class="mapa__pin"></span>
+          <span class="mapa__pin mapa__pin--b"></span>
+          <span class="mapa__pin mapa__pin--c"></span>
+          <div class="ficha">
+            <div class="ficha__cabecera">
+              <p class="ficha__titulo">Fuga constante en banqueta</p>
+              <span class="badge badge--proceso">En proceso</span>
+            </div>
+            <p class="ficha__lugar">San Juan de Dios · Hidalgo y 5 de Mayo</p>
+            <ul class="pasos">
+              <li class="hecho">Recibido</li>
+              <li class="hecho">Asignado</li>
+              <li class="hecho">En proceso</li>
+              <li>Atendido</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion" id="funciones" aria-labelledby="t-funciones">
+      <div class="container">
+        <div class="seccion__cabecera">
+          <h2 id="t-funciones">Qué puedes hacer con EcoReport</h2>
+          <p class="texto-suave">La plataforma no resuelve directamente los problemas ambientales: facilita identificarlos, organizarlos y darles seguimiento.</p>
+        </div>
+        <div class="grid grid--3">
+          <article class="card">
+            <span class="card__icono"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+            <h3>Registra con ubicación</h3>
+            <p>Indica el tipo de problema, la colonia y una referencia para que el personal sepa exactamente a dónde ir.</p>
+          </article>
+          <article class="card">
+            <span class="card__icono"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></span>
+            <h3>Adjunta evidencia</h3>
+            <p>Sube fotografías del problema. La evidencia ayuda a verificar el reporte y a priorizar su atención.</p>
+          </article>
+          <article class="card">
+            <span class="card__icono"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
+            <h3>Consulta el estado</h3>
+            <p>Revisa si tu reporte está pendiente, en proceso o atendido, y qué acciones se han realizado.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion seccion--menta" id="como-funciona" aria-labelledby="t-como">
+      <div class="container">
+        <h2 id="t-como">Cómo funciona</h2>
+        <ol class="pasos-lista">
+          <li><h3>Crea tu cuenta</h3><p>Regístrate con tu correo y entra a tu panel personal.</p></li>
+          <li><h3>Registra el reporte</h3><p>Describe lo que ocurre y dónde. Toma menos de tres minutos.</p></li>
+          <li><h3>Agrega evidencia</h3><p>Adjunta imágenes para respaldar tu reporte.</p></li>
+          <li><h3>Da seguimiento</h3><p>Consulta el historial de acciones hasta que el problema sea atendido.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="seccion" id="perfiles" aria-labelledby="t-perfiles">
+      <div class="container">
+        <div class="seccion__cabecera">
+          <h2 id="t-perfiles">Un espacio para cada perfil</h2>
+        </div>
+        <div class="grid grid--4">
+          <article class="card perfil"><h3>Ciudadano</h3><p>Registra reportes, adjunta evidencia y revisa el estado de cada uno.</p></article>
+          <article class="card perfil"><h3>Personal de atención</h3><p>Gestiona los reportes asignados, registra acciones y actualiza el avance.</p></article>
+          <article class="card perfil"><h3>Administrador</h3><p>Administra usuarios y categorías, y supervisa el funcionamiento del sistema.</p></article>
+          <article class="card perfil"><h3>Supervisor / Analista</h3><p>Consulta estadísticas, identifica zonas con mayor incidencia y genera reportes ejecutivos.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="container seccion" aria-labelledby="t-cta">
+      <div class="banda">
+        <div>
+          <h2 id="t-cta">Tu colonia empieza a cambiar con un reporte</h2>
+          <p>Crea tu cuenta y registra el primero hoy.</p>
+        </div>
+        <a class="btn btn--secondary btn--lg" href="registro.html">Crear mi cuenta</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__grid">
+      <div>
+        <p class="site-footer__marca">EcoReport</p>
+        <p>Sistema web para el reporte y seguimiento de problemas ambientales. Territorio más sano.</p>
+      </div>
+      <nav aria-label="Pie de página">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="login.html">Iniciar sesión</a></li>
+          <li><a href="registro.html">Crear cuenta</a></li>
+        </ul>
+      </nav>
+      <div>
+        <p>Universidad Tecnológica de León · Ingeniería en Tecnologías de la Información e Innovación Digital</p>
+        <p>Aplicaciones Web · Actividad 9 · Prototipo front-end (HTML5 + CSS3)</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

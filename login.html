@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Iniciar sesión · EcoReport</title>
+  <meta name="description" content="Accede a EcoReport para registrar y consultar reportes ambientales.">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&amp;family=Source+Sans+3:wght@400;600;700&amp;display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html">
+        <img src="img/logo-icono.svg" alt="" width="38" height="38">
+        <span class="brand__texto">Eco<b>Report</b></span>
+      </a>
+      <input type="checkbox" id="nav-check" class="nav-check" aria-label="Mostrar u ocultar el menú">
+      <label class="nav-toggle" for="nav-check">
+        <span class="sr-only">Menú</span>
+        <span class="nav-toggle__barras" aria-hidden="true"></span>
+      </label>
+      <nav class="nav" id="menu-principal" aria-label="Principal">
+        <ul class="nav__lista">
+          <li><a class="nav__link" href="index.html">Inicio</a></li>
+          <li><a class="nav__link" href="login.html" aria-current="page">Iniciar sesión</a></li>
+          <li><a class="nav__link" href="registro.html">Crear cuenta</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido" class="container">
+    <div class="acceso">
+      <section class="card" aria-labelledby="t-login">
+        <h1 id="t-login">Inicia sesión</h1>
+        <p class="texto-suave">Entra para registrar o consultar reportes ambientales.</p>
+        <div id="registrado" class="alert alert--exito alert--target bloque-resultado" role="status"><p>Tu cuenta se creó correctamente. Ya puedes iniciar sesión. Simulación del prototipo: sin backend, los cambios no se guardan.</p></div>
+        <form class="form" action="dashboard.html" method="get">
+          <div class="field">
+          <label class="field__label" for="login-correo">Correo electrónico</label>
+          <input type="email" id="login-correo" name="login-correo" autocomplete="email" placeholder="nombre@correo.com" required aria-describedby="login-correo-error">
+          <p class="field__error" id="login-correo-error">Escribe un correo válido, por ejemplo nombre@correo.com.</p>
+        </div>
+          <div class="field">
+          <label class="field__label" for="login-password">Contraseña</label>
+          <input type="password" id="login-password" autocomplete="current-password" required minlength="8" aria-describedby="login-password-error">
+          <p class="field__error" id="login-password-error">Escribe tu contraseña (mínimo 8 caracteres).</p>
+        </div>
+          <div class="acciones">
+            <button class="btn btn--primary" type="submit">Iniciar sesión</button>
+            <a class="btn btn--ghost" href="index.html">Volver al inicio</a>
+          </div>
+        </form>
+        <p class="enlace-aparte">¿Aún no tienes cuenta? <a href="registro.html">Crea una cuenta</a></p>
+      </section>
+      <aside class="card card--plana" aria-labelledby="t-demo">
+        <h2 id="t-demo">Entrar como cada perfil</h2>
+        <p class="texto-suave">Este prototipo no usa servidor ni JavaScript, así que no valida contraseñas. Elige un perfil para recorrer sus pantallas.</p>
+        <ul class="demo-lista"><li><div><strong>Ciudadano</strong><span>ciudadano@ecoreport.mx</span></div><a class="btn btn--secondary btn--sm" href="dashboard.html">Entrar como ciudadano</a></li><li><div><strong>Personal de atención</strong><span>atencion@ecoreport.mx</span></div><a class="btn btn--secondary btn--sm" href="atencion.html">Entrar como personal de atención</a></li><li><div><strong>Administrador</strong><span>admin@ecoreport.mx</span></div><a class="btn btn--secondary btn--sm" href="admin.html">Entrar como administrador</a></li><li><div><strong>Supervisor / Analista</strong><span>supervisor@ecoreport.mx</span></div><a class="btn btn--secondary btn--sm" href="analisis.html">Entrar como supervisor / analista</a></li></ul>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__grid">
+      <div>
+        <p class="site-footer__marca">EcoReport</p>
+        <p>Sistema web para el reporte y seguimiento de problemas ambientales. Territorio más sano.</p>
+      </div>
+      <nav aria-label="Pie de página">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="login.html">Iniciar sesión</a></li>
+          <li><a href="registro.html">Crear cuenta</a></li>
+        </ul>
+      </nav>
+      <div>
+        <p>Universidad Tecnológica de León · Ingeniería en Tecnologías de la Información e Innovación Digital</p>
+        <p>Aplicaciones Web · Actividad 9 · Prototipo front-end (HTML5 + CSS3)</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

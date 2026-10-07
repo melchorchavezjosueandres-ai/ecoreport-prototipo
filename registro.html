@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Crear cuenta · EcoReport</title>
+  <meta name="description" content="Regístrate en EcoReport para reportar problemas ambientales en tu comunidad.">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&amp;family=Source+Sans+3:wght@400;600;700&amp;display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html">
+        <img src="img/logo-icono.svg" alt="" width="38" height="38">
+        <span class="brand__texto">Eco<b>Report</b></span>
+      </a>
+      <input type="checkbox" id="nav-check" class="nav-check" aria-label="Mostrar u ocultar el menú">
+      <label class="nav-toggle" for="nav-check">
+        <span class="sr-only">Menú</span>
+        <span class="nav-toggle__barras" aria-hidden="true"></span>
+      </label>
+      <nav class="nav" id="menu-principal" aria-label="Principal">
+        <ul class="nav__lista">
+          <li><a class="nav__link" href="index.html">Inicio</a></li>
+          <li><a class="nav__link" href="login.html">Iniciar sesión</a></li>
+          <li><a class="nav__link" href="registro.html" aria-current="page">Crear cuenta</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido" class="container">
+    <div class="acceso">
+      <section class="card" aria-labelledby="t-registro">
+        <h1 id="t-registro">Crea tu cuenta</h1>
+        <p class="texto-suave">Con tu cuenta podrás registrar reportes y revisar su estado. Los campos sin la marca «opcional» son obligatorios.</p>
+        <form class="form" action="login.html#registrado" method="get">
+          <fieldset>
+            <legend>Datos personales</legend>
+            <div class="form-fila form-fila--2">
+              <div class="field">
+          <label class="field__label" for="reg-nombre">Nombre(s)</label>
+          <input type="text" id="reg-nombre" name="reg-nombre" autocomplete="given-name" required minlength="2" maxlength="60" aria-describedby="reg-nombre-error">
+          <p class="field__error" id="reg-nombre-error">Escribe tu nombre (mínimo 2 letras).</p>
+        </div>
+              <div class="field">
+          <label class="field__label" for="reg-apellidos">Apellidos</label>
+          <input type="text" id="reg-apellidos" name="reg-apellidos" autocomplete="family-name" required minlength="2" maxlength="60" aria-describedby="reg-apellidos-error">
+          <p class="field__error" id="reg-apellidos-error">Escribe tus apellidos (mínimo 2 letras).</p>
+        </div>
+            </div>
+            <div class="form-fila form-fila--2">
+              <div class="field">
+          <label class="field__label" for="reg-correo">Correo electrónico</label>
+          <input type="email" id="reg-correo" name="reg-correo" autocomplete="email" placeholder="nombre@correo.com" required aria-describedby="reg-correo-error">
+          <p class="field__error" id="reg-correo-error">Escribe un correo válido, por ejemplo nombre@correo.com.</p>
+        </div>
+              <div class="field">
+          <label class="field__label" for="reg-telefono">Teléfono <small>(opcional)</small></label>
+          <input type="tel" id="reg-telefono" name="reg-telefono" autocomplete="tel" placeholder="4771234567" pattern="[0-9]{10}" inputmode="numeric" title="Escribe 10 dígitos, sin espacios" aria-describedby="reg-telefono-error">
+          <p class="field__error" id="reg-telefono-error">Escribe 10 dígitos, sin espacios.</p>
+        </div>
+            </div>
+            <div class="field">
+          <label class="field__label" for="reg-colonia">Colonia</label>
+          <select id="reg-colonia" name="reg-colonia" required aria-describedby="reg-colonia-error"><option value="">Selecciona tu colonia</option><option>Centro</option><option>San Juan de Dios</option><option>Piletas</option><option>Jardines del Moral</option><option>Obregón</option><option>Los Castillos</option><option>Delta</option><option>Industrial</option></select>
+          <p class="field__error" id="reg-colonia-error">Selecciona una opción de la lista.</p>
+        </div>
+          </fieldset>
+          <fieldset>
+            <legend>Acceso</legend>
+            <div class="form-fila form-fila--2">
+              <div class="field">
+          <label class="field__label" for="reg-password">Contraseña</label>
+          <input type="password" id="reg-password" autocomplete="new-password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Usa mínimo 8 caracteres con mayúscula, minúscula y número." aria-describedby="reg-password-hint reg-password-error">
+          <p class="field__hint" id="reg-password-hint">Mínimo 8 caracteres con mayúscula, minúscula y número.</p>
+          <p class="field__error" id="reg-password-error">Usa mínimo 8 caracteres con mayúscula, minúscula y número.</p>
+        </div>
+              <div class="field">
+          <label class="field__label" for="reg-confirmar">Confirmar contraseña</label>
+          <input type="password" id="reg-confirmar" autocomplete="new-password" required minlength="8" aria-describedby="reg-confirmar-error">
+          <p class="field__error" id="reg-confirmar-error">Repite la contraseña (mínimo 8 caracteres).</p>
+        </div>
+            </div>
+          </fieldset>
+          <div class="field">
+            <label class="opcion"><input type="checkbox" id="reg-aviso" name="reg-aviso" required aria-describedby="reg-aviso-error"> Acepto el aviso de privacidad y el uso de mis datos para dar seguimiento a mis reportes.</label>
+            <p class="field__error" id="reg-aviso-error">Debes aceptar el aviso de privacidad para continuar.</p>
+          </div>
+          <div class="acciones">
+            <button class="btn btn--primary" type="submit">Crear cuenta</button>
+            <a class="btn btn--ghost" href="index.html">Cancelar</a>
+          </div>
+        </form>
+        <p class="enlace-aparte">¿Ya tienes cuenta? <a href="login.html">Inicia sesión</a></p>
+      </section>
+      <aside class="card card--plana" aria-labelledby="t-porque">
+        <h2 id="t-porque">Qué obtienes al registrarte</h2>
+        <ul>
+          <li>Un panel con el resumen de tus reportes.</li>
+          <li>Registro de problemas con ubicación y evidencia.</li>
+          <li>Historial de acciones de cada reporte.</li>
+        </ul>
+        <p class="texto-suave">Las cuentas nuevas son de tipo ciudadano. El administrador puede crear cuentas para el resto de los perfiles.</p>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__grid">
+      <div>
+        <p class="site-footer__marca">EcoReport</p>
+        <p>Sistema web para el reporte y seguimiento de problemas ambientales. Territorio más sano.</p>
+      </div>
+      <nav aria-label="Pie de página">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="login.html">Iniciar sesión</a></li>
+          <li><a href="registro.html">Crear cuenta</a></li>
+        </ul>
+      </nav>
+      <div>
+        <p>Universidad Tecnológica de León · Ingeniería en Tecnologías de la Información e Innovación Digital</p>
+        <p>Aplicaciones Web · Actividad 9 · Prototipo front-end (HTML5 + CSS3)</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

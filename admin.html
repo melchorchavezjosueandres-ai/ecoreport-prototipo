@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Administración · EcoReport</title>
+  <meta name="description" content="Gestión de usuarios, categorías y estados de EcoReport.">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&amp;family=Source+Sans+3:wght@400;600;700&amp;display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html">
+        <img src="img/logo-icono.svg" alt="" width="38" height="38">
+        <span class="brand__texto">Eco<b>Report</b></span>
+      </a>
+      <input type="checkbox" id="nav-check" class="nav-check" aria-label="Mostrar u ocultar el menú">
+      <label class="nav-toggle" for="nav-check">
+        <span class="sr-only">Menú</span>
+        <span class="nav-toggle__barras" aria-hidden="true"></span>
+      </label>
+      <nav class="nav" id="menu-principal" aria-label="Principal">
+        <ul class="nav__lista">
+          <li><a class="nav__link" href="admin.html" aria-current="page">Administración</a></li>
+          <li><a class="nav__link" href="analisis.html">Estadísticas</a></li>
+          <li><a class="nav__link" href="perfil.html">Mi perfil</a></li>
+          <li class="nav__usuario"><span>Carlos · Administrador</span> <a class="btn btn--ghost btn--sm" href="index.html">Cerrar sesión</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido" class="container pagina">
+    <nav class="migas" aria-label="Migas de pan"><ol><li><a href="index.html">Inicio</a></li><li aria-current="page">Administración</li></ol></nav>
+    <header class="pagina__cabecera">
+      <h1>Administración del sistema</h1>
+      <p>Gestiona usuarios y categorías, revisa los estados y supervisa los reportes. Para ver indicadores ve a <a href="analisis.html">Estadísticas</a>.</p>
+    </header>
+    <div id="actualizado" class="alert alert--exito alert--target bloque-resultado" role="status"><p>Cambio registrado. Simulación del prototipo: sin backend, los cambios no se guardan.</p></div>
+
+    <div class="tabs">
+      <input class="tabs__radio" type="radio" name="tabs" id="tab-u" checked aria-label="Usuarios">
+      <input class="tabs__radio" type="radio" name="tabs" id="tab-c" aria-label="Categorías">
+      <input class="tabs__radio" type="radio" name="tabs" id="tab-e" aria-label="Estados">
+      <input class="tabs__radio" type="radio" name="tabs" id="tab-r" aria-label="Reportes">
+      <div class="pestanas" aria-hidden="true">
+        <label for="tab-u">Usuarios</label>
+        <label for="tab-c">Categorías</label>
+        <label for="tab-e">Estados</label>
+        <label for="tab-r">Reportes</label>
+      </div>
+
+      <section class="tabs__panel card" id="panel-u" aria-labelledby="t-usuarios">
+        <div class="cabecera-panel">
+          <h2 id="t-usuarios">Usuarios</h2>
+          <a class="btn btn--primary" href="#nuevo-usuario"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg> Nuevo usuario</a>
+        </div>
+        <div class="tabla-wrap">
+          <table class="tabla" id="tabla-usuarios">
+            <caption class="sr-only">Usuarios registrados en el sistema</caption>
+            <thead><tr><th scope="col">Nombre</th><th scope="col">Correo</th><th scope="col">Rol</th><th scope="col">Cuenta</th></tr></thead>
+            <tbody><tr><td data-label="Nombre">Daniela González</td><td data-label="Correo">ciudadano@ecoreport.mx</td><td data-label="Rol">Ciudadano</td><td data-label="Cuenta"><label class="opcion"><input class="switch" type="checkbox" role="switch" checked aria-label="Cuenta activa de Daniela González"><span>Activa</span></label></td></tr><tr><td data-label="Nombre">Mario Vecino</td><td data-label="Correo">vecino@ecoreport.mx</td><td data-label="Rol">Ciudadano</td><td data-label="Cuenta"><label class="opcion"><input class="switch" type="checkbox" role="switch" checked aria-label="Cuenta activa de Mario Vecino"><span>Activa</span></label></td></tr><tr><td data-label="Nombre">Laura Mendoza</td><td data-label="Correo">atencion@ecoreport.mx</td><td data-label="Rol">Personal de atención</td><td data-label="Cuenta"><label class="opcion"><input class="switch" type="checkbox" role="switch" checked aria-label="Cuenta activa de Laura Mendoza"><span>Activa</span></label></td></tr><tr><td data-label="Nombre">Carlos Ramírez</td><td data-label="Correo">admin@ecoreport.mx</td><td data-label="Rol">Administrador</td><td data-label="Cuenta"><label class="opcion"><input class="switch" type="checkbox" role="switch" checked disabled aria-label="Cuenta activa de Carlos Ramírez"><span>Activa</span></label></td></tr><tr><td data-label="Nombre">Patricia Vega</td><td data-label="Correo">supervisor@ecoreport.mx</td><td data-label="Rol">Supervisor / Analista</td><td data-label="Cuenta"><label class="opcion"><input class="switch" type="checkbox" role="switch" checked aria-label="Cuenta activa de Patricia Vega"><span>Activa</span></label></td></tr></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="tabs__panel card" id="panel-c" aria-labelledby="t-categorias">
+        <h2 id="t-categorias">Categorías de reporte</h2>
+        <p class="texto-suave">Son los tipos de problema que los ciudadanos pueden elegir al registrar un reporte.</p>
+        <ul class="chips"><li class="chip"><span>Desperdicio de agua</span></li><li class="chip"><span>Acumulación de basura</span></li><li class="chip"><span>Fuga de agua potable</span></li><li class="chip"><span>Tiradero clandestino</span></li><li class="chip"><span>Otro</span></li></ul>
+        <form class="inline-form" action="admin.html#actualizado" method="get">
+          <div class="field">
+          <label class="field__label" for="c-nombre">Nueva categoría</label>
+          <input type="text" id="c-nombre" name="c-nombre" required minlength="3" maxlength="40" aria-describedby="c-nombre-error">
+          <p class="field__error" id="c-nombre-error">Escribe un nombre de 3 a 40 caracteres.</p>
+        </div>
+          <button class="btn btn--primary" type="submit">Agregar categoría</button>
+        </form>
+      </section>
+
+      <section class="tabs__panel card" id="panel-e" aria-labelledby="t-estados">
+        <h2 id="t-estados">Control general de estados</h2>
+        <p class="texto-suave">Los estados los actualiza el personal de atención; cada cambio queda en el historial del reporte.</p>
+        <ul class="grid grid--3 lista-limpia"><li class="card card--plana"><div class="tarjeta-reporte__top"><span class="badge badge--pendiente">Pendiente</span><strong>5 reportes</strong></div><p>El reporte fue recibido y espera asignación o revisión.</p></li><li class="card card--plana"><div class="tarjeta-reporte__top"><span class="badge badge--proceso">En proceso</span><strong>4 reportes</strong></div><p>Personal de atención trabaja en el problema.</p></li><li class="card card--plana"><div class="tarjeta-reporte__top"><span class="badge badge--atendido">Atendido</span><strong>3 reportes</strong></div><p>El problema se atendió y el reporte se cerró.</p></li></ul>
+      </section>
+
+      <section class="tabs__panel card" id="panel-r" aria-labelledby="t-reportes">
+        <h2 id="t-reportes">Supervisión de reportes</h2>
+        <div class="tabla-wrap">
+          <table class="tabla" id="tabla-supervision">
+            <caption class="sr-only">Todos los reportes registrados en la plataforma</caption>
+            <thead><tr><th scope="col">ID</th><th scope="col">Reporte</th><th scope="col">Tipo</th><th scope="col">Colonia</th><th scope="col">Fecha</th><th scope="col">Estado</th></tr></thead>
+            <tbody>
+              <tr data-estado="pendiente" data-tipo="basura"><td class="id" data-label="ID">ER-012</td><td data-label="Reporte"><a href="detalle.html#er-012">Basura en el camellón</a></td><td data-label="Tipo">Acumulación de basura</td><td data-label="Colonia">Jardines del Moral</td><td data-label="Fecha"><time datetime="2026-10-04">4 oct 2026</time></td><td data-label="Estado"><span class="badge badge--pendiente">Pendiente</span></td></tr><tr data-estado="proceso" data-tipo="otro"><td class="id" data-label="ID">ER-011</td><td data-label="Reporte"><a href="detalle.html#er-011">Olor fuerte por drenaje</a></td><td data-label="Tipo">Otro</td><td data-label="Colonia">Centro</td><td data-label="Fecha"><time datetime="2026-10-03">3 oct 2026</time></td><td data-label="Estado"><span class="badge badge--proceso">En proceso</span></td></tr><tr data-estado="pendiente" data-tipo="fuga"><td class="id" data-label="ID">ER-010</td><td data-label="Reporte"><a href="detalle.html#er-010">Charco permanente en la calle</a></td><td data-label="Tipo">Fuga de agua potable</td><td data-label="Colonia">Piletas</td><td data-label="Fecha"><time datetime="2026-10-03">3 oct 2026</time></td><td data-label="Estado"><span class="badge badge--pendiente">Pendiente</span></td></tr><tr data-estado="pendiente" data-tipo="basura"><td class="id" data-label="ID">ER-008</td><td data-label="Reporte"><a href="detalle.html#er-008">Bolsas en esquina sin recolección</a></td><td data-label="Tipo">Acumulación de basura</td><td data-label="Colonia">San Juan de Dios</td><td data-label="Fecha"><time datetime="2026-10-02">2 oct 2026</time></td><td data-label="Estado"><span class="badge badge--pendiente">Pendiente</span></td></tr><tr data-estado="atendido" data-tipo="agua"><td class="id" data-label="ID">ER-007</td><td data-label="Reporte"><a href="detalle.html#er-007">Riego de jardín bajo la lluvia</a></td><td data-label="Tipo">Desperdicio de agua</td><td data-label="Colonia">Delta</td><td data-label="Fecha"><time datetime="2026-10-01">1 oct 2026</time></td><td data-label="Estado"><span class="badge badge--atendido">Atendido</span></td></tr><tr data-estado="proceso" data-tipo="fuga"><td class="id" data-label="ID">ER-006</td><td data-label="Reporte"><a href="detalle.html#er-006">Tubo roto en avenida</a></td><td data-label="Tipo">Fuga de agua potable</td><td data-label="Colonia">Obregón</td><td data-label="Fecha"><time datetime="2026-10-01">1 oct 2026</time></td><td data-label="Estado"><span class="badge badge--proceso">En proceso</span></td></tr><tr data-estado="pendiente" data-tipo="basura"><td class="id" data-label="ID">ER-005</td><td data-label="Reporte"><a href="detalle.html#er-005">Contenedor desbordado en el mercado</a></td><td data-label="Tipo">Acumulación de basura</td><td data-label="Colonia">Centro</td><td data-label="Fecha"><time datetime="2026-09-30">30 sep 2026</time></td><td data-label="Estado"><span class="badge badge--pendiente">Pendiente</span></td></tr><tr data-estado="proceso" data-tipo="tiradero"><td class="id" data-label="ID">ER-004</td><td data-label="Reporte"><a href="detalle.html#er-004">Escombro en lote baldío</a></td><td data-label="Tipo">Tiradero clandestino</td><td data-label="Colonia">Los Castillos</td><td data-label="Fecha"><time datetime="2026-09-28">28 sep 2026</time></td><td data-label="Estado"><span class="badge badge--proceso">En proceso</span></td></tr><tr data-estado="pendiente" data-tipo="agua"><td class="id" data-label="ID">ER-003</td><td data-label="Reporte"><a href="detalle.html#er-003">Manguera abierta en lavado de autos</a></td><td data-label="Tipo">Desperdicio de agua</td><td data-label="Colonia">Jardines del Moral</td><td data-label="Fecha"><time datetime="2026-09-27">27 sep 2026</time></td><td data-label="Estado"><span class="badge badge--pendiente">Pendiente</span></td></tr><tr data-estado="proceso" data-tipo="basura"><td class="id" data-label="ID">ER-002</td><td data-label="Reporte"><a href="detalle.html#er-002">Basura junto al parque lineal</a></td><td data-label="Tipo">Acumulación de basura</td><td data-label="Colonia">Piletas</td><td data-label="Fecha"><time datetime="2026-09-25">25 sep 2026</time></td><td data-label="Estado"><span class="badge badge--proceso">En proceso</span></td></tr><tr data-estado="atendido" data-tipo="fuga"><td class="id" data-label="ID">ER-001</td><td data-label="Reporte"><a href="detalle.html#er-001">Fuga constante en banqueta</a></td><td data-label="Tipo">Fuga de agua potable</td><td data-label="Colonia">San Juan de Dios</td><td data-label="Fecha"><time datetime="2026-09-22">22 sep 2026</time></td><td data-label="Estado"><span class="badge badge--atendido">Atendido</span></td></tr><tr data-estado="atendido" data-tipo="tiradero"><td class="id" data-label="ID">ER-009</td><td data-label="Reporte"><a href="detalle.html#er-009">Llantas y muebles en el arroyo</a></td><td data-label="Tipo">Tiradero clandestino</td><td data-label="Colonia">Industrial</td><td data-label="Fecha"><time datetime="2026-09-18">18 sep 2026</time></td><td data-label="Estado"><span class="badge badge--atendido">Atendido</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+
+    <div class="modal" id="nuevo-usuario" role="dialog" aria-modal="true" aria-labelledby="t-nuevo-usuario">
+      <a class="modal__fondo" href="#contenido" aria-label="Cerrar ventana"></a>
+      <div class="modal__caja">
+        <h2 id="t-nuevo-usuario">Nuevo usuario</h2>
+        <form class="form" action="admin.html#actualizado" method="get">
+          <div class="field">
+          <label class="field__label" for="u-nombre">Nombre completo</label>
+          <input type="text" id="u-nombre" name="u-nombre" autocomplete="off" required minlength="3" maxlength="80" aria-describedby="u-nombre-error">
+          <p class="field__error" id="u-nombre-error">Escribe el nombre completo (mínimo 3 caracteres).</p>
+        </div>
+          <div class="field">
+          <label class="field__label" for="u-correo">Correo electrónico</label>
+          <input type="email" id="u-correo" name="u-correo" autocomplete="off" required aria-describedby="u-correo-error">
+          <p class="field__error" id="u-correo-error">Escribe un correo válido.</p>
+        </div>
+          <div class="field">
+            <label class="field__label" for="u-rol">Rol</label>
+            <select id="u-rol" name="u-rol" required aria-describedby="u-rol-error"><option value="">Selecciona un rol</option><option>Ciudadano</option><option>Personal de atención</option><option>Administrador</option><option>Supervisor / Analista</option></select>
+            <p class="field__error" id="u-rol-error">Selecciona un rol.</p>
+          </div>
+          <div class="field">
+          <label class="field__label" for="u-pass">Contraseña temporal</label>
+          <input type="password" id="u-pass" autocomplete="new-password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Usa mínimo 8 caracteres con mayúscula, minúscula y número." aria-describedby="u-pass-hint u-pass-error">
+          <p class="field__hint" id="u-pass-hint">Mínimo 8 caracteres con mayúscula, minúscula y número.</p>
+          <p class="field__error" id="u-pass-error">Usa mínimo 8 caracteres con mayúscula, minúscula y número.</p>
+        </div>
+          <div class="acciones">
+            <button class="btn btn--primary" type="submit">Crear usuario</button>
+            <a class="btn btn--ghost" href="#contenido">Cancelar</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__grid">
+      <div>
+        <p class="site-footer__marca">EcoReport</p>
+        <p>Sistema web para el reporte y seguimiento de problemas ambientales. Territorio más sano.</p>
+      </div>
+      <nav aria-label="Pie de página">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="login.html">Iniciar sesión</a></li>
+          <li><a href="registro.html">Crear cuenta</a></li>
+        </ul>
+      </nav>
+      <div>
+        <p>Universidad Tecnológica de León · Ingeniería en Tecnologías de la Información e Innovación Digital</p>
+        <p>Aplicaciones Web · Actividad 9 · Prototipo front-end (HTML5 + CSS3)</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

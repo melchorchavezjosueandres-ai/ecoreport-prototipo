@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mis reportes · EcoReport</title>
+  <meta name="description" content="Consulta y filtra tus reportes ambientales por estado o tipo.">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&amp;family=Source+Sans+3:wght@400;600;700&amp;display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html">
+        <img src="img/logo-icono.svg" alt="" width="38" height="38">
+        <span class="brand__texto">Eco<b>Report</b></span>
+      </a>
+      <input type="checkbox" id="nav-check" class="nav-check" aria-label="Mostrar u ocultar el menú">
+      <label class="nav-toggle" for="nav-check">
+        <span class="sr-only">Menú</span>
+        <span class="nav-toggle__barras" aria-hidden="true"></span>
+      </label>
+      <nav class="nav" id="menu-principal" aria-label="Principal">
+        <ul class="nav__lista">
+          <li><a class="nav__link" href="dashboard.html">Dashboard</a></li>
+          <li><a class="nav__link" href="nuevo-reporte.html">Nuevo reporte</a></li>
+          <li><a class="nav__link" href="consulta.html" aria-current="page">Mis reportes</a></li>
+          <li><a class="nav__link" href="perfil.html">Mi perfil</a></li>
+          <li class="nav__usuario"><span>Daniela · Ciudadano</span> <a class="btn btn--ghost btn--sm" href="index.html">Cerrar sesión</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido" class="container pagina">
+    <nav class="migas" aria-label="Migas de pan"><ol><li><a href="dashboard.html">Dashboard</a></li><li aria-current="page">Mis reportes</li></ol></nav>
+    <header class="pagina__cabecera">
+      <div class="cabecera-panel">
+        <h1>Mis reportes</h1>
+        <a class="btn btn--primary" href="nuevo-reporte.html"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg> Nuevo reporte</a>
+      </div>
+      <p>Estos son los reportes que has registrado. Usa los filtros para ver solo los que te interesan.</p>
+    </header>
+
+    <section class="card filtrable" aria-label="Listado de reportes">
+      <div class="filtros-css">
+        <fieldset class="filtro-grupo"><legend>Estado</legend><div class="opciones"><span><input class="filtro-radio" type="radio" name="estado" id="fe-todos" checked><label class="filtro-etiqueta" for="fe-todos">Todos</label></span><span><input class="filtro-radio" type="radio" name="estado" id="fe-pendiente"><label class="filtro-etiqueta" for="fe-pendiente">Pendiente</label></span><span><input class="filtro-radio" type="radio" name="estado" id="fe-proceso"><label class="filtro-etiqueta" for="fe-proceso">En proceso</label></span><span><input class="filtro-radio" type="radio" name="estado" id="fe-atendido"><label class="filtro-etiqueta" for="fe-atendido">Atendido</label></span></div></fieldset>
+        <fieldset class="filtro-grupo"><legend>Tipo de problema</legend><div class="opciones"><span><input class="filtro-radio" type="radio" name="tipo" id="ft-todos" checked><label class="filtro-etiqueta" for="ft-todos">Todos</label></span><span><input class="filtro-radio" type="radio" name="tipo" id="ft-agua"><label class="filtro-etiqueta" for="ft-agua">Desperdicio de agua</label></span><span><input class="filtro-radio" type="radio" name="tipo" id="ft-basura"><label class="filtro-etiqueta" for="ft-basura">Acumulación de basura</label></span><span><input class="filtro-radio" type="radio" name="tipo" id="ft-fuga"><label class="filtro-etiqueta" for="ft-fuga">Fuga de agua potable</label></span><span><input class="filtro-radio" type="radio" name="tipo" id="ft-tiradero"><label class="filtro-etiqueta" for="ft-tiradero">Tiradero clandestino</label></span><span><input class="filtro-radio" type="radio" name="tipo" id="ft-otro"><label class="filtro-etiqueta" for="ft-otro">Otro</label></span></div></fieldset>
+      </div>
+      <div class="tabla-wrap">
+          <table class="tabla" id="tabla-consulta">
+            <caption class="sr-only">Reportes ambientales registrados por ti</caption>
+            <thead><tr><th scope="col">ID</th><th scope="col">Reporte</th><th scope="col">Tipo</th><th scope="col">Colonia</th><th scope="col">Fecha</th><th scope="col">Estado</th></tr></thead>
+            <tbody>
+              <tr data-estado="pendiente" data-tipo="fuga"><td class="id" data-label="ID">ER-010</td><td data-label="Reporte"><a href="detalle.html#er-010">Charco permanente en la calle</a></td><td data-label="Tipo">Fuga de agua potable</td><td data-label="Colonia">Piletas</td><td data-label="Fecha"><time datetime="2026-10-03">3 oct 2026</time></td><td data-label="Estado"><span class="badge badge--pendiente">Pendiente</span></td></tr><tr data-estado="proceso" data-tipo="fuga"><td class="id" data-label="ID">ER-006</td><td data-label="Reporte"><a href="detalle.html#er-006">Tubo roto en avenida</a></td><td data-label="Tipo">Fuga de agua potable</td><td data-label="Colonia">Obregón</td><td data-label="Fecha"><time datetime="2026-10-01">1 oct 2026</time></td><td data-label="Estado"><span class="badge badge--proceso">En proceso</span></td></tr><tr data-estado="pendiente" data-tipo="agua"><td class="id" data-label="ID">ER-003</td><td data-label="Reporte"><a href="detalle.html#er-003">Manguera abierta en lavado de autos</a></td><td data-label="Tipo">Desperdicio de agua</td><td data-label="Colonia">Jardines del Moral</td><td data-label="Fecha"><time datetime="2026-09-27">27 sep 2026</time></td><td data-label="Estado"><span class="badge badge--pendiente">Pendiente</span></td></tr><tr data-estado="proceso" data-tipo="basura"><td class="id" data-label="ID">ER-002</td><td data-label="Reporte"><a href="detalle.html#er-002">Basura junto al parque lineal</a></td><td data-label="Tipo">Acumulación de basura</td><td data-label="Colonia">Piletas</td><td data-label="Fecha"><time datetime="2026-09-25">25 sep 2026</time></td><td data-label="Estado"><span class="badge badge--proceso">En proceso</span></td></tr><tr data-estado="atendido" data-tipo="fuga"><td class="id" data-label="ID">ER-001</td><td data-label="Reporte"><a href="detalle.html#er-001">Fuga constante en banqueta</a></td><td data-label="Tipo">Fuga de agua potable</td><td data-label="Colonia">San Juan de Dios</td><td data-label="Fecha"><time datetime="2026-09-22">22 sep 2026</time></td><td data-label="Estado"><span class="badge badge--atendido">Atendido</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      <p class="texto-suave">Si no ves filas, no hay reportes con esa combinación de filtros. Elige «Todos» para volver a ver la lista completa.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__grid">
+      <div>
+        <p class="site-footer__marca">EcoReport</p>
+        <p>Sistema web para el reporte y seguimiento de problemas ambientales. Territorio más sano.</p>
+      </div>
+      <nav aria-label="Pie de página">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="login.html">Iniciar sesión</a></li>
+          <li><a href="registro.html">Crear cuenta</a></li>
+        </ul>
+      </nav>
+      <div>
+        <p>Universidad Tecnológica de León · Ingeniería en Tecnologías de la Información e Innovación Digital</p>
+        <p>Aplicaciones Web · Actividad 9 · Prototipo front-end (HTML5 + CSS3)</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

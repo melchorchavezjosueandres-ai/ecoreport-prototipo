@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nuevo reporte · EcoReport</title>
+  <meta name="description" content="Registra un problema ambiental con tipo, ubicación, descripción y evidencia.">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&amp;family=Source+Sans+3:wght@400;600;700&amp;display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html">
+        <img src="img/logo-icono.svg" alt="" width="38" height="38">
+        <span class="brand__texto">Eco<b>Report</b></span>
+      </a>
+      <input type="checkbox" id="nav-check" class="nav-check" aria-label="Mostrar u ocultar el menú">
+      <label class="nav-toggle" for="nav-check">
+        <span class="sr-only">Menú</span>
+        <span class="nav-toggle__barras" aria-hidden="true"></span>
+      </label>
+      <nav class="nav" id="menu-principal" aria-label="Principal">
+        <ul class="nav__lista">
+          <li><a class="nav__link" href="dashboard.html">Dashboard</a></li>
+          <li><a class="nav__link" href="nuevo-reporte.html" aria-current="page">Nuevo reporte</a></li>
+          <li><a class="nav__link" href="consulta.html">Mis reportes</a></li>
+          <li><a class="nav__link" href="perfil.html">Mi perfil</a></li>
+          <li class="nav__usuario"><span>Daniela · Ciudadano</span> <a class="btn btn--ghost btn--sm" href="index.html">Cerrar sesión</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido" class="container pagina">
+    <nav class="migas" aria-label="Migas de pan"><ol><li><a href="dashboard.html">Dashboard</a></li><li aria-current="page">Nuevo reporte</li></ol></nav>
+    <header class="pagina__cabecera">
+      <h1>Registrar un reporte</h1>
+      <p>Cuéntanos qué ocurre y dónde. Todos los campos son obligatorios salvo los marcados como opcionales.</p>
+    </header>
+
+    <div class="layout-2">
+      <section class="card" aria-label="Formulario de reporte">
+        <form class="form" action="detalle.html#er-013" method="get">
+          <fieldset>
+            <legend>¿Qué está pasando?</legend>
+            <div class="field">
+          <label class="field__label" for="r-tipo">Tipo de problema</label>
+          <select id="r-tipo" name="r-tipo" required aria-describedby="r-tipo-error"><option value="">Selecciona un tipo</option><option>Desperdicio de agua</option><option>Acumulación de basura</option><option>Fuga de agua potable</option><option>Tiradero clandestino</option><option>Otro</option></select>
+          <p class="field__error" id="r-tipo-error">Selecciona una opción de la lista.</p>
+        </div>
+            <div class="field">
+          <label class="field__label" for="r-titulo">Título del reporte</label>
+          <input type="text" id="r-titulo" name="r-titulo" placeholder="Ej. Fuga constante en la banqueta" required minlength="5" maxlength="80" aria-describedby="r-titulo-hint r-titulo-error">
+          <p class="field__hint" id="r-titulo-hint">Resume el problema en pocas palabras.</p>
+          <p class="field__error" id="r-titulo-error">Escribe un título de 5 a 80 caracteres.</p>
+        </div>
+            <div class="field">
+          <label class="field__label" for="r-descripcion">Descripción</label>
+          <textarea id="r-descripcion" name="r-descripcion" rows="5" required minlength="20" maxlength="500" aria-describedby="r-descripcion-hint r-descripcion-error"></textarea>
+          <p class="field__hint" id="r-descripcion-hint">Explica qué observas, desde cuándo y a quién afecta.</p>
+          <p class="field__error" id="r-descripcion-error">Describe el problema con al menos 20 caracteres (máximo 500).</p>
+        </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>¿Dónde ocurre?</legend>
+            <div class="field">
+          <label class="field__label" for="r-colonia">Colonia</label>
+          <select id="r-colonia" name="r-colonia" required aria-describedby="r-colonia-error"><option value="">Selecciona la colonia</option><option>Centro</option><option>San Juan de Dios</option><option>Piletas</option><option>Jardines del Moral</option><option>Obregón</option><option>Los Castillos</option><option>Delta</option><option>Industrial</option></select>
+          <p class="field__error" id="r-colonia-error">Selecciona una opción de la lista.</p>
+        </div>
+            <div class="field">
+          <label class="field__label" for="r-referencia">Calle o referencia</label>
+          <input type="text" id="r-referencia" name="r-referencia" placeholder="Ej. Calle Hidalgo esquina con 5 de Mayo" required minlength="5" maxlength="120" aria-describedby="r-referencia-error">
+          <p class="field__error" id="r-referencia-error">Escribe una calle o referencia (mínimo 5 caracteres).</p>
+        </div>
+            <div class="field">
+          <label class="field__label" for="r-coordenadas">Coordenadas <small>(opcional)</small></label>
+          <input type="text" id="r-coordenadas" name="r-coordenadas" placeholder="21.1236, -101.6860" pattern="-?[0-9]{1,2}\.[0-9]+, ?-?[0-9]{1,3}\.[0-9]+" title="Latitud y longitud separadas por coma" aria-describedby="r-coordenadas-hint r-coordenadas-error">
+          <p class="field__hint" id="r-coordenadas-hint">Opcional. Puedes copiarlas desde un mapa.</p>
+          <p class="field__error" id="r-coordenadas-error">Usa el formato 21.1236, -101.6860.</p>
+        </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Evidencia</legend>
+            <div class="field">
+              <label class="field__label" for="r-evidencias">Fotografías <small>(opcional)</small></label>
+              <input type="file" id="r-evidencias" name="r-evidencias" accept="image/*" multiple aria-describedby="r-evidencias-hint">
+              <p class="field__hint" id="r-evidencias-hint">Hasta 3 imágenes (JPG, PNG o WEBP) de máximo 5 MB cada una.</p>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Urgencia</legend>
+            <div class="opciones">
+              <label class="opcion opcion--caja"><input type="radio" name="urgencia" value="Baja"> Baja</label>
+              <label class="opcion opcion--caja"><input type="radio" name="urgencia" value="Media" checked> Media</label>
+              <label class="opcion opcion--caja"><input type="radio" name="urgencia" value="Alta"> Alta</label>
+            </div>
+          </fieldset>
+
+          <div class="acciones">
+            <button class="btn btn--primary" type="submit">Enviar reporte</button>
+            <a class="btn btn--ghost" href="dashboard.html">Cancelar</a>
+          </div>
+        </form>
+      </section>
+
+      <aside class="grid" aria-label="Ayuda">
+        <section class="card" aria-labelledby="t-ayuda">
+          <h2 id="t-ayuda">Después de enviarlo</h2>
+          <p>Recibirás un folio y podrás ver el estado de tu reporte en «Mis reportes».</p>
+          <p class="texto-suave">En este prototipo, al enviar verás un reporte de ejemplo.</p>
+        </section>
+        <section class="card card--plana" aria-labelledby="t-consejos2">
+          <h2 id="t-consejos2">Consejos</h2>
+          <ul>
+            <li>Sé específico con la ubicación.</li>
+            <li>Una foto vale más que mil palabras.</li>
+            <li>Marca urgencia alta solo si hay riesgo.</li>
+          </ul>
+        </section>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__grid">
+      <div>
+        <p class="site-footer__marca">EcoReport</p>
+        <p>Sistema web para el reporte y seguimiento de problemas ambientales. Territorio más sano.</p>
+      </div>
+      <nav aria-label="Pie de página">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="login.html">Iniciar sesión</a></li>
+          <li><a href="registro.html">Crear cuenta</a></li>
+        </ul>
+      </nav>
+      <div>
+        <p>Universidad Tecnológica de León · Ingeniería en Tecnologías de la Información e Innovación Digital</p>
+        <p>Aplicaciones Web · Actividad 9 · Prototipo front-end (HTML5 + CSS3)</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

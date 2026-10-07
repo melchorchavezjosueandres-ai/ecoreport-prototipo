@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard · EcoReport</title>
+  <meta name="description" content="Resumen de tus reportes ambientales en EcoReport.">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&amp;family=Source+Sans+3:wght@400;600;700&amp;display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html">
+        <img src="img/logo-icono.svg" alt="" width="38" height="38">
+        <span class="brand__texto">Eco<b>Report</b></span>
+      </a>
+      <input type="checkbox" id="nav-check" class="nav-check" aria-label="Mostrar u ocultar el menú">
+      <label class="nav-toggle" for="nav-check">
+        <span class="sr-only">Menú</span>
+        <span class="nav-toggle__barras" aria-hidden="true"></span>
+      </label>
+      <nav class="nav" id="menu-principal" aria-label="Principal">
+        <ul class="nav__lista">
+          <li><a class="nav__link" href="dashboard.html" aria-current="page">Dashboard</a></li>
+          <li><a class="nav__link" href="nuevo-reporte.html">Nuevo reporte</a></li>
+          <li><a class="nav__link" href="consulta.html">Mis reportes</a></li>
+          <li><a class="nav__link" href="perfil.html">Mi perfil</a></li>
+          <li class="nav__usuario"><span>Daniela · Ciudadano</span> <a class="btn btn--ghost btn--sm" href="index.html">Cerrar sesión</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido" class="container pagina">
+    <nav class="migas" aria-label="Migas de pan"><ol><li><a href="index.html">Inicio</a></li><li aria-current="page">Dashboard</li></ol></nav>
+    <header class="pagina__cabecera">
+      <h1>Hola, Daniela</h1>
+      <p>Este es el resumen de tus reportes ambientales.</p>
+    </header>
+    <div class="alert alert--info" role="status"><p>Tienes 2 reportes en proceso de atención. Revisa el historial para ver los avances.</p></div>
+
+    <section aria-label="Resumen de reportes" class="grid grid--stats">
+      <div class="card stat">
+            <span class="stat__icono "><svg class="icono" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></span>
+            <div><span class="stat__valor">5</span><span class="stat__etiqueta">Reportes registrados</span></div>
+          </div>
+      <div class="card stat">
+            <span class="stat__icono stat__icono--pendiente"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
+            <div><span class="stat__valor">2</span><span class="stat__etiqueta">Pendientes</span></div>
+          </div>
+      <div class="card stat">
+            <span class="stat__icono stat__icono--proceso"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></span>
+            <div><span class="stat__valor">2</span><span class="stat__etiqueta">En proceso</span></div>
+          </div>
+      <div class="card stat">
+            <span class="stat__icono stat__icono--atendido"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span>
+            <div><span class="stat__valor">1</span><span class="stat__etiqueta">Atendidos</span></div>
+          </div>
+    </section>
+
+    <div class="layout-2 seccion">
+      <section class="card" aria-labelledby="t-recientes">
+        <div class="cabecera-panel">
+          <h2 id="t-recientes">Mis reportes recientes</h2>
+          <a class="btn btn--ghost btn--sm" href="consulta.html">Ver todos</a>
+        </div>
+        <div class="tabla-wrap">
+          <table class="tabla" id="tabla-reciente">
+            <caption class="sr-only">Últimos reportes registrados por ti</caption>
+            <thead><tr><th scope="col">ID</th><th scope="col">Reporte</th><th scope="col">Tipo</th><th scope="col">Colonia</th><th scope="col">Fecha</th><th scope="col">Estado</th></tr></thead>
+            <tbody>
+              <tr data-estado="pendiente" data-tipo="fuga"><td class="id" data-label="ID">ER-010</td><td data-label="Reporte"><a href="detalle.html#er-010">Charco permanente en la calle</a></td><td data-label="Tipo">Fuga de agua potable</td><td data-label="Colonia">Piletas</td><td data-label="Fecha"><time datetime="2026-10-03">3 oct 2026</time></td><td data-label="Estado"><span class="badge badge--pendiente">Pendiente</span></td></tr><tr data-estado="proceso" data-tipo="fuga"><td class="id" data-label="ID">ER-006</td><td data-label="Reporte"><a href="detalle.html#er-006">Tubo roto en avenida</a></td><td data-label="Tipo">Fuga de agua potable</td><td data-label="Colonia">Obregón</td><td data-label="Fecha"><time datetime="2026-10-01">1 oct 2026</time></td><td data-label="Estado"><span class="badge badge--proceso">En proceso</span></td></tr><tr data-estado="pendiente" data-tipo="agua"><td class="id" data-label="ID">ER-003</td><td data-label="Reporte"><a href="detalle.html#er-003">Manguera abierta en lavado de autos</a></td><td data-label="Tipo">Desperdicio de agua</td><td data-label="Colonia">Jardines del Moral</td><td data-label="Fecha"><time datetime="2026-09-27">27 sep 2026</time></td><td data-label="Estado"><span class="badge badge--pendiente">Pendiente</span></td></tr><tr data-estado="proceso" data-tipo="basura"><td class="id" data-label="ID">ER-002</td><td data-label="Reporte"><a href="detalle.html#er-002">Basura junto al parque lineal</a></td><td data-label="Tipo">Acumulación de basura</td><td data-label="Colonia">Piletas</td><td data-label="Fecha"><time datetime="2026-09-25">25 sep 2026</time></td><td data-label="Estado"><span class="badge badge--proceso">En proceso</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <aside class="grid" aria-label="Acciones y consejos">
+        <section class="card" aria-labelledby="t-rapidas">
+          <h2 id="t-rapidas">Acciones rápidas</h2>
+          <div class="acciones">
+            <a class="btn btn--primary" href="nuevo-reporte.html"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg> Nuevo reporte</a>
+            <a class="btn btn--secondary" href="consulta.html"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> Consultar reportes</a>
+          </div>
+        </section>
+        <section class="card card--plana" aria-labelledby="t-consejos">
+          <h2 id="t-consejos">Un buen reporte incluye</h2>
+          <ul>
+            <li>El cruce de calles o una referencia clara.</li>
+            <li>Qué ves y desde cuándo ocurre.</li>
+            <li>Una o más fotos del problema.</li>
+          </ul>
+        </section>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__grid">
+      <div>
+        <p class="site-footer__marca">EcoReport</p>
+        <p>Sistema web para el reporte y seguimiento de problemas ambientales. Territorio más sano.</p>
+      </div>
+      <nav aria-label="Pie de página">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="login.html">Iniciar sesión</a></li>
+          <li><a href="registro.html">Crear cuenta</a></li>
+        </ul>
+      </nav>
+      <div>
+        <p>Universidad Tecnológica de León · Ingeniería en Tecnologías de la Información e Innovación Digital</p>
+        <p>Aplicaciones Web · Actividad 9 · Prototipo front-end (HTML5 + CSS3)</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

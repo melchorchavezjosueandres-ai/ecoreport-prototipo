@@ -1,0 +1,13 @@
+﻿ID,Titulo,Tipo,Colonia,Referencia,Fecha,Estado,Urgencia
+"ER-012","Basura en el camellón","Acumulación de basura","Jardines del Moral","Camellón de Av. del Moral","2026-10-04","Pendiente","Baja"
+"ER-011","Olor fuerte por drenaje","Otro","Centro","Callejón del Carmen","2026-10-03","En proceso","Media"
+"ER-010","Charco permanente en la calle","Fuga de agua potable","Piletas","Calle Pípila 118","2026-10-03","Pendiente","Media"
+"ER-008","Bolsas en esquina sin recolección","Acumulación de basura","San Juan de Dios","Calle Zaragoza y Allende","2026-10-02","Pendiente","Media"
+"ER-007","Riego de jardín bajo la lluvia","Desperdicio de agua","Delta","Parque Delta, sección poniente","2026-10-01","Atendido","Baja"
+"ER-006","Tubo roto en avenida","Fuga de agua potable","Obregón","Blvd. Obregón y Calle 3","2026-10-01","En proceso","Alta"
+"ER-005","Contenedor desbordado en el mercado","Acumulación de basura","Centro","Mercado Hidalgo, acceso sur","2026-09-30","Pendiente","Alta"
+"ER-004","Escombro en lote baldío","Tiradero clandestino","Los Castillos","Calle Roble, junto al arroyo","2026-09-28","En proceso","Alta"
+"ER-003","Manguera abierta en lavado de autos","Desperdicio de agua","Jardines del Moral","Av. del Moral 214","2026-09-27","Pendiente","Media"
+"ER-002","Basura junto al parque lineal","Acumulación de basura","Piletas","Andador norte, frente a la cancha","2026-09-25","En proceso","Media"
+"ER-001","Fuga constante en banqueta","Fuga de agua potable","San Juan de Dios","Calle Hidalgo esquina con 5 de Mayo","2026-09-22","Atendido","Alta"
+"ER-009","Llantas y muebles en el arroyo","Tiradero clandestino","Industrial","Camino a la ladrillera","2026-09-18","Atendido","Media"

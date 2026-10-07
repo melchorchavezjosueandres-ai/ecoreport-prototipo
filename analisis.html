@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Estadísticas · EcoReport</title>
+  <meta name="description" content="Indicadores, zonas con mayor incidencia y reportes ejecutivos de EcoReport.">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&amp;family=Source+Sans+3:wght@400;600;700&amp;display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html">
+        <img src="img/logo-icono.svg" alt="" width="38" height="38">
+        <span class="brand__texto">Eco<b>Report</b></span>
+      </a>
+      <input type="checkbox" id="nav-check" class="nav-check" aria-label="Mostrar u ocultar el menú">
+      <label class="nav-toggle" for="nav-check">
+        <span class="sr-only">Menú</span>
+        <span class="nav-toggle__barras" aria-hidden="true"></span>
+      </label>
+      <nav class="nav" id="menu-principal" aria-label="Principal">
+        <ul class="nav__lista">
+          <li><a class="nav__link" href="analisis.html" aria-current="page">Análisis</a></li>
+          <li><a class="nav__link" href="perfil.html">Mi perfil</a></li>
+          <li class="nav__usuario"><span>Patricia · Supervisor / Analista</span> <a class="btn btn--ghost btn--sm" href="index.html">Cerrar sesión</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido" class="container pagina">
+    <nav class="migas" aria-label="Migas de pan"><ol><li><a href="index.html">Inicio</a></li><li aria-current="page">Estadísticas</li></ol></nav>
+    <header class="pagina__cabecera">
+      <div class="cabecera-panel">
+        <h1>Estadísticas e indicadores</h1>
+        <a class="btn btn--secondary no-imprimir" href="docs/reportes.csv" download>Descargar reporte (CSV)</a>
+      </div>
+      <p>Información organizada para el análisis y la toma de decisiones. Para imprimir el informe usa Ctrl + P.</p>
+    </header>
+
+    <section aria-label="Indicadores generales" class="grid grid--stats">
+      <div class="card stat">
+            <span class="stat__icono "><svg class="icono" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></span>
+            <div><span class="stat__valor">12</span><span class="stat__etiqueta">Reportes totales</span></div>
+          </div>
+      <div class="card stat">
+            <span class="stat__icono stat__icono--atendido"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span>
+            <div><span class="stat__valor">25%</span><span class="stat__etiqueta">Tasa de atención</span></div>
+          </div>
+      <div class="card stat">
+            <span class="stat__icono stat__icono--pendiente"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
+            <div><span class="stat__valor">5</span><span class="stat__etiqueta">Pendientes</span></div>
+          </div>
+      <div class="card stat">
+            <span class="stat__icono stat__icono--proceso"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></span>
+            <div><span class="stat__valor">4</span><span class="stat__etiqueta">En proceso</span></div>
+          </div>
+    </section>
+
+    <div class="grid grid--2 seccion">
+      <section class="card" aria-labelledby="t-tipo">
+        <h2 id="t-tipo">Reportes por tipo de problema</h2>
+        <ul class="barras "><li class="barra"><span>Acumulación de basura</span><span class="barra__pista"><span class="barra__relleno w-100"></span></span><span class="barra__valor">4</span></li><li class="barra"><span>Fuga de agua potable</span><span class="barra__pista"><span class="barra__relleno w-75"></span></span><span class="barra__valor">3</span></li><li class="barra"><span>Desperdicio de agua</span><span class="barra__pista"><span class="barra__relleno w-50"></span></span><span class="barra__valor">2</span></li><li class="barra"><span>Tiradero clandestino</span><span class="barra__pista"><span class="barra__relleno w-50"></span></span><span class="barra__valor">2</span></li><li class="barra"><span>Otro</span><span class="barra__pista"><span class="barra__relleno w-25"></span></span><span class="barra__valor">1</span></li></ul>
+      </section>
+      <section class="card" aria-labelledby="t-zona">
+        <h2 id="t-zona">Zonas con mayor incidencia</h2>
+        <ul class="barras barras--cauce"><li class="barra"><span>San Juan de Dios</span><span class="barra__pista"><span class="barra__relleno w-100"></span></span><span class="barra__valor">2</span></li><li class="barra"><span>Piletas</span><span class="barra__pista"><span class="barra__relleno w-100"></span></span><span class="barra__valor">2</span></li><li class="barra"><span>Jardines del Moral</span><span class="barra__pista"><span class="barra__relleno w-100"></span></span><span class="barra__valor">2</span></li><li class="barra"><span>Centro</span><span class="barra__pista"><span class="barra__relleno w-100"></span></span><span class="barra__valor">2</span></li><li class="barra"><span>Los Castillos</span><span class="barra__pista"><span class="barra__relleno w-50"></span></span><span class="barra__valor">1</span></li></ul>
+      </section>
+      <section class="card" aria-labelledby="t-estado">
+        <h2 id="t-estado">Estado de los reportes</h2>
+        <div class="dona-wrap">
+          <div class="dona" aria-hidden="true"></div>
+          <ul class="leyenda">
+            <li><i class="i-pendiente"></i>Pendientes: <strong>5</strong></li>
+            <li><i class="i-proceso"></i>En proceso: <strong>4</strong></li>
+            <li><i class="i-atendido"></i>Atendidos: <strong>3</strong></li>
+          </ul>
+        </div>
+      </section>
+      <section class="card card--plana" aria-labelledby="t-lectura">
+        <h2 id="t-lectura">Cómo leer estos datos</h2>
+        <p>Los indicadores se calculan con los 12 reportes de ejemplo del prototipo.</p>
+        <p>La tasa de atención es el porcentaje de reportes en estado «Atendido» respecto al total.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__grid">
+      <div>
+        <p class="site-footer__marca">EcoReport</p>
+        <p>Sistema web para el reporte y seguimiento de problemas ambientales. Territorio más sano.</p>
+      </div>
+      <nav aria-label="Pie de página">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="login.html">Iniciar sesión</a></li>
+          <li><a href="registro.html">Crear cuenta</a></li>
+        </ul>
+      </nav>
+      <div>
+        <p>Universidad Tecnológica de León · Ingeniería en Tecnologías de la Información e Innovación Digital</p>
+        <p>Aplicaciones Web · Actividad 9 · Prototipo front-end (HTML5 + CSS3)</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

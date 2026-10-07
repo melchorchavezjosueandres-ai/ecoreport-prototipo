@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es-MX"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wireframes · EcoReport</title><link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../css/styles.css">
+<style>
+ .wf__par { display: grid; gap: var(--e4); grid-template-columns: 220px 1fr; align-items: start; }
+ @media (max-width: 719px) { .wf__par { grid-template-columns: 1fr; } }
+ .pantalla { border: 2px solid var(--tinta); border-radius: var(--r-m); padding: var(--e2); display: grid; gap: var(--e2); background: #fff; }
+ .b { border: 1.5px dashed #8FA79A; border-radius: var(--r-s); padding: .6rem; font-size: .85rem; background: var(--papel); text-align: center; }
+ .b.nav { background: var(--menta); } .b.pie { background: var(--tinta); color: #fff; border-style: solid; }
+ .b.btn { background: var(--hoja); color: #fff; border-style: solid; } .b.btn2 { border: 2px solid var(--hoja); border-style: solid; }
+ .b.mapa { min-height: 70px; background: repeating-linear-gradient(45deg, #fff, #fff 8px, var(--menta) 8px, var(--menta) 16px); }
+ .b.migas { font-size: .75rem; text-align: left; border-style: solid; border-color: var(--borde); }
+ .b.h3 { font-weight: 700; } .b.fila { min-height: 54px; display: grid; place-items: center; } .b.dos { min-height: 90px; display: grid; place-items: center; }
+</style></head>
+<body><header class="site-header"><div class="container site-header__inner"><a class="brand" href="../index.html"><img src="../img/logo-icono.svg" alt="" width="38" height="38"><span class="brand__texto">Eco<b>Report</b></span></a></div></header>
+<main id="contenido" class="container pagina"><header class="pagina__cabecera"><h1>Wireframes (mobile-first)</h1>
+<p>Bocetos de baja fidelidad de las vistas principales. Primero se diseña la columna móvil y después se reorganiza para pantallas amplias. Las vistas de atención, administración, estadísticas y perfil reutilizan los mismos componentes (navbar, footer, tarjetas, tablas y formularios).</p></header>
+<div class="grid"><article class="card wf"><h2>1. Inicio</h2><p class="texto-suave">RF-01, RF-02 · punto de entrada</p>
+      <div class="wf__par"><div><p class="texto-suave">Móvil (375 px)</p><div class="pantalla movil"><div class="b nav">Logo · Menú</div><div class="b h3">Título + texto</div><div class="b btn">Crear cuenta</div><div class="b btn2">Iniciar sesión</div><div class="b mapa">Ilustración de reporte</div><div class="b fila">3 tarjetas de funciones</div><div class="b fila">Pasos</div><div class="b pie">Footer</div></div></div>
+      <div><p class="texto-suave">Escritorio (1280 px)</p><div class="pantalla escr"><div class="b nav">Logo · Menú</div><div class="b dos">Título + botones | Ilustración</div><div class="b fila">3 tarjetas en fila</div><div class="b fila">4 pasos en fila</div><div class="b fila">4 perfiles</div><div class="b pie">Footer</div></div></div></div></article>
+<article class="card wf"><h2>2. Login / Registro</h2><p class="texto-suave">RF-01, RF-02</p>
+      <div class="wf__par"><div><p class="texto-suave">Móvil (375 px)</p><div class="pantalla movil"><div class="b nav">Logo · Menú</div><div class="b h3">Formulario (campos + errores)</div><div class="b btn">Enviar</div><div class="b fila">Cuentas demo / beneficios</div><div class="b pie">Footer</div></div></div>
+      <div><p class="texto-suave">Escritorio (1280 px)</p><div class="pantalla escr"><div class="b nav">Logo · Menú</div><div class="b dos">Formulario | Cuentas demo</div><div class="b pie">Footer</div></div></div></div></article>
+<article class="card wf"><h2>3. Dashboard ciudadano</h2><p class="texto-suave">RF-06, RF-07</p>
+      <div class="wf__par"><div><p class="texto-suave">Móvil (375 px)</p><div class="pantalla movil"><div class="b nav">Logo · Menú</div><div class="b migas">Migas de pan</div><div class="b h3">Saludo</div><div class="b fila">4 contadores (2×2)</div><div class="b fila">Reportes recientes (tarjetas)</div><div class="b fila">Acciones rápidas</div><div class="b pie">Footer</div></div></div>
+      <div><p class="texto-suave">Escritorio (1280 px)</p><div class="pantalla escr"><div class="b nav">Logo · Menú</div><div class="b migas">Migas de pan</div><div class="b h3">Saludo</div><div class="b fila">4 contadores en fila</div><div class="b dos">Tabla reciente | Acciones y consejos</div><div class="b pie">Footer</div></div></div></div></article>
+<article class="card wf"><h2>4. Nuevo reporte</h2><p class="texto-suave">RF-03, RF-04, RF-05</p>
+      <div class="wf__par"><div><p class="texto-suave">Móvil (375 px)</p><div class="pantalla movil"><div class="b nav">Logo · Menú</div><div class="b migas">Migas de pan</div><div class="b h3">Qué pasa: tipo, título, descripción</div><div class="b h3">Dónde: colonia, referencia, GPS</div><div class="b h3">Evidencia + miniaturas</div><div class="b h3">Urgencia</div><div class="b btn">Enviar reporte</div><div class="b pie">Footer</div></div></div>
+      <div><p class="texto-suave">Escritorio (1280 px)</p><div class="pantalla escr"><div class="b nav">Logo · Menú</div><div class="b migas">Migas de pan</div><div class="b dos">Formulario en 4 secciones | Vista previa y ayuda</div><div class="b pie">Footer</div></div></div></div></article>
+<article class="card wf"><h2>5. Consulta de reportes</h2><p class="texto-suave">RF-06, RF-07</p>
+      <div class="wf__par"><div><p class="texto-suave">Móvil (375 px)</p><div class="pantalla movil"><div class="b nav">Logo · Menú</div><div class="b migas">Migas de pan</div><div class="b h3">Título + Nuevo reporte</div><div class="b fila">Buscar + filtros apilados</div><div class="b fila">Reportes como tarjetas</div><div class="b pie">Footer</div></div></div>
+      <div><p class="texto-suave">Escritorio (1280 px)</p><div class="pantalla escr"><div class="b nav">Logo · Menú</div><div class="b migas">Migas de pan</div><div class="b h3">Título + Nuevo reporte</div><div class="b fila">Buscar | Estado | Tipo | Orden | Limpiar</div><div class="b fila">Tabla: ID, Reporte, Tipo, Colonia, Fecha, Estado</div><div class="b pie">Footer</div></div></div></div></article>
+<article class="card wf"><h2>6. Detalle del reporte</h2><p class="texto-suave">RF-07, RF-08</p>
+      <div class="wf__par"><div><p class="texto-suave">Móvil (375 px)</p><div class="pantalla movil"><div class="b nav">Logo · Menú</div><div class="b migas">Migas de pan</div><div class="b h3">Folio, título, estado</div><div class="b fila">Datos y descripción</div><div class="b fila">Evidencia</div><div class="b fila">Historial</div><div class="b fila">Actualizar estado (personal)</div></div></div>
+      <div><p class="texto-suave">Escritorio (1280 px)</p><div class="pantalla escr"><div class="b nav">Logo · Menú</div><div class="b migas">Migas de pan</div><div class="b h3">Folio, título, estado</div><div class="b dos">Datos, descripción y evidencia | Historial + actualizar estado</div><div class="b pie">Footer</div></div></div></div></article></div></main></body></html>

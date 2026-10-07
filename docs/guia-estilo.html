@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guía de estilo · EcoReport</title>
+  <link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&amp;family=Source+Sans+3:wght@400;600;700&amp;display=swap">
+  <link rel="stylesheet" href="../css/styles.css">
+  <style>
+    .muestra { border-radius: var(--r-m); padding: var(--e4) var(--e3); min-height: 110px; display: flex; flex-direction: column; justify-content: flex-end; border: 1px solid var(--borde); }
+    .muestra strong { font-family: var(--fuente-titulos); }
+    .m-hoja { background: var(--hoja); color: #fff; } .m-tinta { background: var(--tinta); color: #fff; }
+    .m-menta { background: var(--menta); } .m-cauce { background: var(--cauce); color: #fff; }
+    .m-ambar { background: var(--ambar); color: var(--tinta); }
+    .escala div { background: var(--hoja); height: 14px; border-radius: 4px; margin-bottom: var(--e2); }
+    .e-1 { width: .25rem; } .e-2 { width: .5rem; } .e-3 { width: 1rem; } .e-4 { width: 1.5rem; } .e-5 { width: 2rem; } .e-6 { width: 3rem; }
+  </style>
+</head>
+<body>
+  <header class="site-header"><div class="container site-header__inner">
+    <a class="brand" href="../index.html"><img src="../img/logo-icono.svg" alt="" width="38" height="38"><span class="brand__texto">Eco<b>Report</b></span></a>
+  </div></header>
+  <main id="contenido" class="container pagina">
+    <header class="pagina__cabecera"><h1>Guía de estilo</h1><p>Paleta, tipografía, espaciado y componentes del prototipo (solo HTML5 y CSS3). Todos los valores viven en <code>css/styles.css</code> como variables.</p></header>
+
+    <section class="seccion" aria-labelledby="g-paleta"><h2 id="g-paleta">Paleta (5 colores)</h2>
+      <div class="grid grid--4">
+        <div class="muestra m-hoja"><strong>Hoja</strong>#1E7B59 · acción principal</div>
+        <div class="muestra m-tinta"><strong>Tinta</strong>#14283A · texto y estructura</div>
+        <div class="muestra m-menta"><strong>Menta</strong>#EAF6F0 · fondos suaves</div>
+        <div class="muestra m-cauce"><strong>Cauce</strong>#1F6FA5 · agua, «en proceso»</div>
+        <div class="muestra m-ambar"><strong>Ámbar</strong>#E0A100 · alertas, «pendiente»</div>
+      </div>
+      <p class="texto-suave">Contraste AA: texto Tinta sobre Papel/Blanco y texto blanco sobre Hoja, Cauce y Tinta.</p>
+    </section>
+
+    <section class="seccion" aria-labelledby="g-tipo"><h2 id="g-tipo">Tipografía (2 familias)</h2>
+      <div class="grid grid--2">
+        <div class="card"><p class="texto-suave">Sora · títulos (600, 700, 800)</p><h1>Reporta. Sigue su atención.</h1><h2>Título de sección</h2><h3>Título de tarjeta</h3></div>
+        <div class="card"><p class="texto-suave">Source Sans 3 · texto (400, 600, 700)</p><p>EcoReport reúne los reportes de fugas de agua y basura acumulada de tu comunidad, con ubicación, evidencia y estado.</p><p><strong>Texto en negritas</strong> y <a href="#g-tipo">un enlace</a>.</p></div>
+      </div>
+    </section>
+
+    <section class="seccion" aria-labelledby="g-esp"><h2 id="g-esp">Espaciado</h2>
+      <div class="escala card"><div class="e-1"></div><div class="e-2"></div><div class="e-3"></div><div class="e-4"></div><div class="e-5"></div><div class="e-6"></div>
+      <p class="texto-suave">--e1 0.25 rem · --e2 0.5 · --e3 1 · --e4 1.5 · --e5 2 · --e6 3</p></div>
+    </section>
+
+    <section class="seccion" aria-labelledby="g-btn"><h2 id="g-btn">Botones y sus estados</h2>
+      <div class="card"><div class="acciones">
+        <button class="btn btn--primary" type="button">Primario</button>
+        <button class="btn btn--secondary" type="button">Secundario</button>
+        <button class="btn btn--ghost" type="button">Fantasma</button>
+        <button class="btn btn--danger" type="button">Peligro</button>
+        <button class="btn btn--primary" type="button" disabled>Deshabilitado</button>
+      </div><p class="texto-suave">Estados: normal, hover, active, foco visible (Tab) y deshabilitado.</p></div>
+    </section>
+
+    <section class="seccion" aria-labelledby="g-badge"><h2 id="g-badge">Estados de reporte y alertas</h2>
+      <div class="card">
+        <p><span class="badge badge--pendiente">Pendiente</span> <span class="badge badge--proceso">En proceso</span> <span class="badge badge--atendido">Atendido</span> <span class="badge badge--alta">Urgencia alta</span></p>
+        <div class="alert alert--exito"><p>Éxito: tu reporte se registró.</p></div>
+        <div class="alert alert--info"><p>Información: tienes reportes en proceso.</p></div>
+        <div class="alert alert--aviso"><p>Aviso: tu cuenta está desactivada.</p></div>
+        <div class="alert alert--error"><p>Error: revisa los datos.</p></div>
+      </div>
+    </section>
+
+    <section class="seccion" aria-labelledby="g-form"><h2 id="g-form">Formularios</h2>
+      <div class="card"><form class="form" novalidate>
+        <div class="field"><label class="field__label" for="g-a">Campo normal</label><input type="text" id="g-a" name="g-a" placeholder="Escribe aquí"><p class="field__hint">Texto de ayuda.</p></div>
+        <div class="field field--invalid"><label class="field__label" for="g-b">Campo con error</label><input type="text" id="g-b" name="g-b" aria-invalid="true" aria-describedby="g-b-e"><p class="field__error" id="g-b-e">Este campo es obligatorio.</p></div>
+        <div class="opciones"><label class="opcion opcion--caja"><input type="radio" name="g-r"> Opción A</label><label class="opcion opcion--caja"><input type="radio" name="g-r" checked> Opción B</label></div>
+      </form></div>
+    </section>
+
+    <section class="seccion" aria-labelledby="g-ico"><h2 id="g-ico">Iconografía y logotipo</h2>
+      <div class="card"><p>Íconos SVG de trazo (24 px, <code>currentColor</code>), siempre decorativos con <code>aria-hidden</code>. El logotipo provisional es <code>img/logo-icono.svg</code>; sustitúyanlo por el oficial del equipo.</p><img src="../img/logo-icono.svg" alt="Logotipo provisional de EcoReport" width="64" height="64"></div>
+    </section>
+  </main>
+</body>
+</html>

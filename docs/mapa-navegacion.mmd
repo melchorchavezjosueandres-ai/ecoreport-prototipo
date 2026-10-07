@@ -1,0 +1,24 @@
+flowchart TD
+  I["index.html<br/>Inicio"] --> L["login.html<br/>Iniciar sesión"]
+  I --> R["registro.html<br/>Crear cuenta"]
+  R --> L
+  L --> D["dashboard.html<br/>Ciudadano"]
+  L --> A["atencion.html<br/>Personal de atención"]
+  L --> AD["admin.html<br/>Administrador"]
+  L --> S["analisis.html<br/>Supervisor / Analista"]
+  D --> N["nuevo-reporte.html<br/>Registrar reporte"]
+  D --> C["consulta.html<br/>Mis reportes"]
+  D --> P["perfil.html<br/>Mi perfil"]
+  N --> DT["detalle.html<br/>Detalle e historial"]
+  C --> DT
+  A --> DT
+  AD --> DT
+  AD --> S
+  A --> P
+  AD --> P
+  S --> P
+  DT --> C
+  classDef pub fill:#EAF6F0,stroke:#1E7B59,color:#14283A
+  classDef int fill:#DCEBF7,stroke:#1F6FA5,color:#14283A
+  class I,L,R pub
+  class D,A,AD,S,N,C,DT,P int

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mi perfil · EcoReport</title>
+  <meta name="description" content="Consulta y actualiza tus datos personales y tu contraseña en EcoReport.">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&amp;family=Source+Sans+3:wght@400;600;700&amp;display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html">
+        <img src="img/logo-icono.svg" alt="" width="38" height="38">
+        <span class="brand__texto">Eco<b>Report</b></span>
+      </a>
+      <input type="checkbox" id="nav-check" class="nav-check" aria-label="Mostrar u ocultar el menú">
+      <label class="nav-toggle" for="nav-check">
+        <span class="sr-only">Menú</span>
+        <span class="nav-toggle__barras" aria-hidden="true"></span>
+      </label>
+      <nav class="nav" id="menu-principal" aria-label="Principal">
+        <ul class="nav__lista">
+          <li><a class="nav__link" href="dashboard.html">Dashboard</a></li>
+          <li><a class="nav__link" href="nuevo-reporte.html">Nuevo reporte</a></li>
+          <li><a class="nav__link" href="consulta.html">Mis reportes</a></li>
+          <li><a class="nav__link" href="perfil.html" aria-current="page">Mi perfil</a></li>
+          <li class="nav__usuario"><span>Daniela · Ciudadano</span> <a class="btn btn--ghost btn--sm" href="index.html">Cerrar sesión</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido" class="container pagina">
+    <nav class="migas" aria-label="Migas de pan"><ol><li><a href="dashboard.html">Dashboard</a></li><li aria-current="page">Mi perfil</li></ol></nav>
+    <header class="pagina__cabecera">
+      <h1>Mi perfil</h1>
+      <p>Tu rol en el sistema: <span class="badge badge--neutro">Ciudadano</span></p>
+    </header>
+    <div id="guardado" class="alert alert--exito alert--target bloque-resultado" role="status"><p>Guardamos los cambios de tu perfil. Simulación del prototipo: sin backend, los cambios no se guardan.</p></div>
+
+    <div class="layout-2 layout-2--igual">
+      <section class="card" aria-labelledby="t-datos">
+        <h2 id="t-datos">Datos personales</h2>
+        <form class="form" action="perfil.html#guardado" method="get">
+          <div class="field">
+          <label class="field__label" for="p-nombre">Nombre completo</label>
+          <input type="text" id="p-nombre" name="p-nombre" autocomplete="name" required minlength="3" maxlength="80" value="Daniela González" aria-describedby="p-nombre-error">
+          <p class="field__error" id="p-nombre-error">Escribe tu nombre (mínimo 3 caracteres).</p>
+        </div>
+          <div class="field">
+            <label class="field__label" for="p-correo">Correo electrónico</label>
+            <input type="email" id="p-correo" name="p-correo" value="ciudadano@ecoreport.mx" disabled aria-describedby="p-correo-hint">
+            <p class="field__hint" id="p-correo-hint">El correo es tu usuario y no se puede cambiar.</p>
+          </div>
+          <div class="field">
+          <label class="field__label" for="p-telefono">Teléfono <small>(opcional)</small></label>
+          <input type="tel" id="p-telefono" name="p-telefono" autocomplete="tel" placeholder="4771234567" pattern="[0-9]{10}" inputmode="numeric" title="Escribe 10 dígitos, sin espacios" aria-describedby="p-telefono-error">
+          <p class="field__error" id="p-telefono-error">Escribe 10 dígitos, sin espacios.</p>
+        </div>
+          <div class="field">
+          <label class="field__label" for="p-colonia">Colonia</label>
+          <select id="p-colonia" name="p-colonia" required aria-describedby="p-colonia-error"><option value="">Selecciona tu colonia</option><option selected>Centro</option><option>San Juan de Dios</option><option>Piletas</option><option>Jardines del Moral</option><option>Obregón</option><option>Los Castillos</option><option>Delta</option><option>Industrial</option></select>
+          <p class="field__error" id="p-colonia-error">Selecciona una opción de la lista.</p>
+        </div>
+          <div class="acciones"><button class="btn btn--primary" type="submit">Guardar cambios</button></div>
+        </form>
+      </section>
+
+      <section class="card" aria-labelledby="t-seguridad">
+        <h2 id="t-seguridad">Cambiar contraseña</h2>
+        <form class="form" action="perfil.html#guardado" method="get">
+          <div class="field">
+          <label class="field__label" for="p-actual">Contraseña actual</label>
+          <input type="password" id="p-actual" autocomplete="current-password" required aria-describedby="p-actual-error">
+          <p class="field__error" id="p-actual-error">Escribe tu contraseña actual.</p>
+        </div>
+          <div class="field">
+          <label class="field__label" for="p-nueva">Contraseña nueva</label>
+          <input type="password" id="p-nueva" autocomplete="new-password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Usa mínimo 8 caracteres con mayúscula, minúscula y número." aria-describedby="p-nueva-hint p-nueva-error">
+          <p class="field__hint" id="p-nueva-hint">Mínimo 8 caracteres con mayúscula, minúscula y número.</p>
+          <p class="field__error" id="p-nueva-error">Usa mínimo 8 caracteres con mayúscula, minúscula y número.</p>
+        </div>
+          <div class="field">
+          <label class="field__label" for="p-confirmar">Confirmar contraseña nueva</label>
+          <input type="password" id="p-confirmar" autocomplete="new-password" required minlength="8" aria-describedby="p-confirmar-error">
+          <p class="field__error" id="p-confirmar-error">Repite la contraseña nueva.</p>
+        </div>
+          <div class="acciones"><button class="btn btn--secondary" type="submit">Actualizar contraseña</button></div>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__grid">
+      <div>
+        <p class="site-footer__marca">EcoReport</p>
+        <p>Sistema web para el reporte y seguimiento de problemas ambientales. Territorio más sano.</p>
+      </div>
+      <nav aria-label="Pie de página">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="login.html">Iniciar sesión</a></li>
+          <li><a href="registro.html">Crear cuenta</a></li>
+        </ul>
+      </nav>
+      <div>
+        <p>Universidad Tecnológica de León · Ingeniería en Tecnologías de la Información e Innovación Digital</p>
+        <p>Aplicaciones Web · Actividad 9 · Prototipo front-end (HTML5 + CSS3)</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

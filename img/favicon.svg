@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="40" height="40" role="img" aria-label="Logotipo de EcoReport">
+  <path d="M24 2C14.6 2 7 9.4 7 18.6c0 11.8 14.2 26 16.2 27.9.5.5 1.2.5 1.7 0C26.8 44.6 41 30.4 41 18.6 41 9.4 33.4 2 24 2z" fill="#1E7B59"/>
+  <rect x="15" y="10" width="14" height="17" rx="2.2" fill="#FFFFFF"/>
+  <rect x="18" y="14" width="8" height="2" rx="1" fill="#1E7B59"/>
+  <rect x="18" y="18.5" width="6" height="2" rx="1" fill="#1E7B59"/>
+  <path d="M19 33c0-7 5-12 15-13 0 8-5 13-15 13z" fill="#9BDB86"/>
+  <path d="M19 33c4-4 8-8 12-10" stroke="#14583F" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+</svg>
